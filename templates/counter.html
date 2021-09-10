@@ -1,0 +1,55 @@
+{% load static %}
+
+<div class="ftco-appointment ftco-section img" id="fh5co-register" style="background-image: url(images/img_bg_2.jpg);">
+    <div class="container">
+        <div class="overlay"></div>
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="date-counter text-center">
+                    <h2>Obtén 80% de Descuento en Curso Online</h2>
+                    <h3>por Hanna Garduño</h3>
+                    <div class="simply-countdown simply-countdown-one"></div>
+                    <p><strong>Oferta Limitada, ¡Apurale!</strong></p>
+                    <p><a href="#" class="btn btn-primary btn-lg btn-reg">¡Compra Ahora!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block javascript %}
+<!-- Count Down -->
+<script src="{% static 'js/simplyCountdown.js' %}"></script>
+<script>
+    var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+
+    // default example
+    simplyCountdown('.simply-countdown-one', {
+        year: 2021,
+        month: 8,
+        day: 29,
+        hours: 23 - 5,
+        minutes: 59,
+        seconds: 59,
+        words: {
+            days: 'día',
+            hours: 'hora',
+            minutes: 'minuto',
+            seconds: 'segundo',
+            pluralLetter: 's'
+        },
+        // enableUtc: true, 
+        // year: d.getFullYear(),
+        // month: d.getMonth() + 1,
+        // day: d.getDate()
+    });
+
+    //jQuery example
+    // $('#simply-countdown-losange').simplyCountdown({
+    //     year: d.getFullYear(),
+    //     month: d.getMonth() + 1,
+    //     day: d.getDate(),
+    //     enableUtc: false
+    // });
+</script>
+{% endblock javascript %}
